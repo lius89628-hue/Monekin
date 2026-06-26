@@ -27,6 +27,15 @@ jobs:
       - name: Generate i18n files
         run: flutter pub run slang
 
+      - name: Generate signing key
+        run: |
+          mkdir -p android/keys
+          keytool -genkey -v -keystore android/keys/release-key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias release -storepass password -keypass password -dname "CN=Test, OU=Test, O=Test, L=Test, ST=Test, C=CN"
+          echo "storeFile=keys/release-key.jks" > android/keys/key.properties
+          echo "storePassword=password" >> android/keys/key.properties
+          echo "keyPassword=password" >> android/keys/key.properties
+          echo "keyAlias=release" >> android/keys/key.properties
+
       - name: Build APK
         run: flutter build apk --release
 
