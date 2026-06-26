@@ -39,19 +39,17 @@ jobs:
       - name: Build APK
         run: flutter build apk --release
 
-      - name: Upload APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: monekin-zh-release-apk
-          path: build/app/outputs/flutter-apk/app-release.apk
-
       - name: Rename APK
         run: |
           mkdir -p release
           cp build/app/outputs/flutter-apk/app-release.apk release/Monekin-zh.apk
 
-      - name: Upload renamed APK
-        uses: actions/upload-artifact@v4
+      - name: Upload APK to GitHub Release
+        uses: softprops/action-gh-release@v2
         with:
-          name: Monekin-zh.apk
-          path: release/Monekin-zh.apk
+          tag_name: v9.2.0-zh
+          name: "Monekin 汉化版 v9.2.0"
+          body: "Monekin 中文汉化版 APK\n- 完善简体中文翻译\n- 默认中文语言\n- 完全离线、无广告"
+          files: release/Monekin-zh.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
