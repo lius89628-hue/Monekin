@@ -699,8 +699,8 @@
         "fail": "超出预算"
       },
       "DESCRIPTION": {
-        "active-on-track": "You can spend {{ daily金额 }} per day for the remaining {{ remainingDays }} days",
-        "active-overspending": "To get back on track, you should limit your spending to {{ daily金额 }} per day for the remaining {{ remainingDays }} days",
+        "active-on-track": "You can spend {{dailyAmount}} per day for the remaining {{remainingDays}} days",
+        "active-overspending": "To get back on track, you should limit your spending to {{dailyAmount}} per day for the remaining {{remainingDays}} days",
         "active-indeterminate": "您还剩 {{ amount }} 可以消费。",
         "active-exceeded": "您已经超出了预算限额 {{ amount }}。如果您找不到此预算的任何收入，您应该在其剩余期间停止支出",
         "success": "干得好！该预算已成功完成。继续创建预算以管理您的支出",
@@ -758,8 +758,8 @@
         "fail": "目标失败"
       },
       "DESCRIPTION": {
-        "active-on-track": "You are on track to seek your goal! You have to save {{ daily金额 }} per day for the remaining {{ remainingDays }} days",
-        "active-behind-schedule": "You are behind schedule. You have to save {{ daily金额 }} per day to reach your goal in {{ remainingDays }} days",
+        "active-on-track": "You are on track to seek your goal! You have to save {{dailyAmount}} per day for the remaining {{remainingDays}} days",
+        "active-behind-schedule": "You are behind schedule. You have to save {{dailyAmount}} per day to reach your goal in {{remainingDays}} days",
         "active-indeterminate": "您还需要 {{ amount }} 才能实现目标。",
         "success": "恭喜！你达到了你的目标。",
         "fail": "您与目标相差了 {{ amount }}。"
