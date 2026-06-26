@@ -82,7 +82,7 @@
         "forever": "永久",
         "TYPES": {
           "cycle": "循环",
-          "last_days": "Last days",
+          "last_days": "近几天",
           "last_days_form": "前{{x}}天",
           "all": "总是",
           "date_range": "自定义范围"
@@ -172,7 +172,7 @@
     "select-your-currency": "选择您的货币",
     "welcome.subtitle": "您的个人财务管家",
     "welcome.subtitle2": "100% 开放，100% 免费",
-    "welcome.footer": "登录即表示您同意<a href='https://github.com/enrique-lozano/Monekin/blob/main/docs/PRIVACY_POLICY.md'>隐私策略</a>和此应用的<a href= 'https: //github.com/enrique-lozano/Monekin/blob/main/docs/TERMS_OF_USE.md'>使用条款</a>",
+    "welcome.footer": "By logging in you agree to the <a href='https://github.com/enrique-lozano/Monekin/blob/main/docs/PRIVACY_POLICY.md'>隐私 政策</a> and the <a href='https://github.com/enrique-lozano/Monekin/blob/main/docs/TERMS_OF_USE.md'>条款 of Use</a> of the application",
     "offline.descr.title": "本地账户：",
     "offline.descr": "您的数据只会存储于此设备中，只要您不卸载应用或更换手机，数据就会保持安全。为避免数据丢失，建议定期从应用设置中备份数据。",
     "offline.start": "开始使用本地账户",
@@ -261,10 +261,10 @@
     "balance-by-currency-subtitle": "我有多少的外币？",
     "balance-evolution": "余额趋势",
     "balance-evolution-subtitle": "我是否比之前更有钱了？",
-    "net-worth": "Net worth",
-    "net-worth-subtitle": "The difference between what you own and what you owe.",
-    "net-worth-composition": "Net worth composition",
-    "net-worth-composition-subtitle": "Distribution between accounts, investments and debts.",
+    "net-worth": "净资产",
+    "net-worth-subtitle": "您拥有的资产与负债之间的差额。",
+    "net-worth-composition": "净资产构成",
+    "net-worth-composition-subtitle": "账户、投资和债务之间的分布。",
     "compared-to-previous-period": "与上一段时间相比",
     "cash-flow": "现金流",
     "cash-flow-subtitle": "我的支出是否少于我的收入？",
@@ -449,7 +449,7 @@
   "TRANSFER": {
     "display": "转账",
     "transfers": "转账",
-    "transfer-to": "转账至 {{account}}",
+    "transfer-to": "转账 to {{ account }}",
     "create": "转账",
     "need-two-accounts.warning.header": "哎呀！",
     "need-two-accounts.warning.message": "至少需要两个账户才能执行此操作。如果您需要调整或编辑此账户的当前余额，请点击编辑按钮",
@@ -699,8 +699,8 @@
         "fail": "超出预算"
       },
       "DESCRIPTION": {
-        "active-on-track": "在剩余的 {{ remainingDays }} 天里，您每天可以花费 {{ dailyAmount }}",
-        "active-overspending": "为了回到正轨，您应该在剩余的 {{ remainingDays }} 天里将每天的支出限制在 {{ dailyAmount }}",
+        "active-on-track": "You can spend {{ daily金额 }} per day for the remaining {{ remainingDays }} days",
+        "active-overspending": "To get back on track, you should limit your spending to {{ daily金额 }} per day for the remaining {{ remainingDays }} days",
         "active-indeterminate": "您还剩 {{ amount }} 可以消费。",
         "active-exceeded": "您已经超出了预算限额 {{ amount }}。如果您找不到此预算的任何收入，您应该在其剩余期间停止支出",
         "success": "干得好！该预算已成功完成。继续创建预算以管理您的支出",
@@ -758,8 +758,8 @@
         "fail": "目标失败"
       },
       "DESCRIPTION": {
-        "active-on-track": "您正在寻找目标的轨道上！您必须在剩余的 {{ remainingDays }} 天内每天节省 {{ dailyAmount }}",
-        "active-behind-schedule": "你落后于计划了。您必须每天节省 {{ dailyAmount }} 才能在 {{ remainingDays }} 天后达到您的目标",
+        "active-on-track": "You are on track to seek your goal! You have to save {{ daily金额 }} per day for the remaining {{ remainingDays }} days",
+        "active-behind-schedule": "You are behind schedule. You have to save {{ daily金额 }} per day to reach your goal in {{ remainingDays }} days",
         "active-indeterminate": "您还需要 {{ amount }} 才能实现目标。",
         "success": "恭喜！你达到了你的目标。",
         "fail": "您与目标相差了 {{ amount }}。"
@@ -868,6 +868,22 @@
       "jewelry_art": "珠宝与艺术品",
       "other": "其他"
     },
+    "ACTIONS": {
+      "add_register": {
+        "button_label": "Link transaction",
+        "modal_title": "Link transaction to asset",
+        "modal_subtitle": "Choose how you want to associate a transaction with this asset"
+      },
+      "link_transaction": {
+        "title": "Link existing income or expense",
+        "description": "Associate income or expense entries related to this asset, like purchases, sales, or maintenance. This will help organize history and improve stats, but it won't change the asset's current value.",
+        "success": "Transaction linked successfully"
+      },
+      "new_investment_transaction": {
+        "title": "创建 investment transaction",
+        "description": "Move money between an account and this asset. Buying adds funds and increases your investment; selling withdraws funds and reduces it. You can update the asset valuation accordingly."
+      }
+    },
     "DETAILS": {
       "select_account": "选择一个帐户",
       "buy": "买",
@@ -905,12 +921,12 @@
       "currency": "货币",
       "select_currency": "请选择货币",
       "creation_date": "创建日期",
+      "acquisition_date": "创建日期",
+      "creation_date_before_linked_account": "The asset date cannot be before the linked account creation date",
       "edit": "编辑资产",
       "create": "创建资产",
       "already_exists": "具有此名称的资产已存在。您可能想要编辑它",
-      "valuation_before_creation_date": "该资产的估值日期早于收购日期",
-      "acquisition_date": "创建日期",
-      "creation_date_before_linked_account": "The asset date cannot be before the linked account creation date"
+      "valuation_before_creation_date": "该资产的估值日期早于收购日期"
     },
     "VALUATION": {
       "history": "估值历史",
@@ -928,26 +944,10 @@
       "delete_all_valuations_success": "所有估价已成功删除"
     },
     "SORT": {
-      "name_asc": "姓名（A-Z）",
-      "name_desc": "姓名（Z-A）",
+      "name_asc": "名称 (A-Z)",
+      "name_desc": "名称 (Z-A)",
       "value_asc": "值（最低的在前）",
       "value_desc": "值（最高的在前）"
-    },
-    "ACTIONS": {
-      "add_register": {
-        "button_label": "Link transaction",
-        "modal_title": "Link transaction to asset",
-        "modal_subtitle": "Choose how you want to associate a transaction with this asset"
-      },
-      "link_transaction": {
-        "title": "Link existing income or expense",
-        "description": "Associate income or expense entries related to this asset, like purchases, sales, or maintenance. This will help organize history and improve stats, but it won't change the asset's current value.",
-        "success": "Transaction linked successfully"
-      },
-      "new_investment_transaction": {
-        "title": "Create investment transaction",
-        "description": "Move money between an account and this asset. Buying adds funds and increases your investment; selling withdraws funds and reduces it. You can update the asset valuation accordingly."
-      }
     }
   },
   "TARGET_TIMELINE_STATUSES": {
@@ -975,8 +975,7 @@
       "send_file": "发送文件",
       "see_folder": "查看文件夹",
       "success": "文件已成功保存/下载至 {{x}}",
-      "error": "下载文件时发生错误。请通过 lozin.technologies@gmail.com 联系开发人员",
-      "dialog_title": "保存/发送文件"
+      "error": "错误 downloading the file. Please contact the developer via lozin.technologies@gmail.com"
     },
     "IMPORT": {
       "title": "导入您的数据",
@@ -994,7 +993,7 @@
         "removeDefaultAccount": "删除默认账户",
         "defaultCategory": "默认类别",
         "defaultTags": "默认标签",
-        "select-a-column": "从 .csv 中选择一列",
+        "select-a-column": "选择 a column from the .csv",
         "date-format": "日期格式",
         "note-column": "备注列",
         "title-column": "标题列",
@@ -1020,8 +1019,7 @@
         "success": "成功导入 {{x}} 笔交易"
       },
       "success": "导入成功",
-      "error": "导入文件时发生错误。请通过 lozin.technologies@gmail.com 联系开发人员。",
-      "cancelled": "导入被用户取消"
+      "error": "错误 importing file. Please contact developer via lozin.technologies@gmail.com"
     },
     "ABOUT": {
       "title": "有关您的数据库的信息",
@@ -1094,21 +1092,21 @@
         "remove_status": "删除状态"
       },
       "DEFAULT_VALUES": {
-        "title": "Default Form Values",
-        "page_title": "New Transaction: Default Form Values",
-        "reuse_last_transaction": "Reuse Last Transaction Values",
+        "title": "Default Form 数值s",
+        "page_title": "New Transaction: Default Form 数值s",
+        "reuse_last_transaction": "Reuse Last Transaction 数值s",
         "reuse_last_transaction_descr": "Automatically fill the form with some values from the last created transaction",
         "fields_to_reuse": "Fields to reuse",
-        "reuse_last_values_modal_descr": "Select the fields that should be pre-filled with the values from the last created transaction.",
-        "default_values_separator": "Default Values",
+        "reuse_last_values_modal_descr": "选择 the fields that should be pre-filled with the values from the last created transaction.",
+        "default_values_separator": "Default 数值s",
         "default_category": "Default Category",
-        "default_status": "Default Status",
+        "default_status": "Default 状态",
         "default_tags": "Default Tags",
         "no_tags_selected": "No tags selected"
       },
       "DEFAULT_TYPE": {
-        "title": "Default Type",
-        "modal_title": "Select Default Type"
+        "title": "Default 类型",
+        "modal_title": "选择 Default 类型"
       }
     },
     "APPEARANCE": {
@@ -1167,7 +1165,7 @@
       "rate-us.descr": "欢迎所有分数和评价！",
       "share": "分享 Monekin",
       "share.descr": "与朋友和家人分享我们的应用",
-      "share.text": "Monekin！最好的个人理财应用 。此处下载",
+      "share.text": "Monekin! The best personal finance app. 下载 it here",
       "thanks": "谢谢您！",
       "thanks_long": "您对 Monekin 和其它大大小小的开源项目的贡献成就了这一伟大项目。感谢您花时间做出贡献。",
       "donate": "捐款",

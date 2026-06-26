@@ -131,24 +131,16 @@ class MonekinAppEntryPoint extends StatelessWidget {
       UserSettingService.instance.setItem(SettingKey.appLanguage, null);
     }
 
-    // Uses locale of the device, fallbacks to base locale. Returns the locale which has been set:
-    LocaleSettings.useDeviceLocale()
-        .then((setLocale) {
-          Logger.printDebug(
-            'App language set to device language: ${setLocale.languageTag}',
-          );
-        })
-        .catchError((error) {
-          Logger.printDebug(
-            'Error setting app language to device language: $error',
-          );
-        })
-        .whenComplete(() {
-          // The set locale should be accessible via LocaleSettings.currentLocale
-          Logger.printDebug(
-            'Current locale: ${LocaleSettings.currentLocale.languageTag}',
-          );
-        });
+    // Default to Chinese (zh-CN) for first launch
+    LocaleSettings.setLocale(AppLocale.zhCn).then((setLocale) {
+      Logger.printDebug(
+        'App language set to default: ${setLocale.languageTag}',
+      );
+    }).catchError((error) {
+      Logger.printDebug(
+        'Error setting app language to default: $error',
+      );
+    });
   }
 }
 

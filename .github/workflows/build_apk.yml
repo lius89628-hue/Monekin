@@ -1,0 +1,49 @@
+name: Build Release APK (Chinese Version)
+
+on:
+  push:
+    branches:
+      - main
+      - master
+      - develop
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.x'
+          channel: stable
+
+      - name: Get dependencies
+        run: flutter pub get
+
+      - name: Generate i18n files
+        run: flutter pub run slang
+
+      - name: Build APK
+        run: flutter build apk --release
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: monekin-zh-release-apk
+          path: build/app/outputs/flutter-apk/app-release.apk
+
+      - name: Rename APK
+        run: |
+          mkdir -p release
+          cp build/app/outputs/flutter-apk/app-release.apk release/Monekin-zh.apk
+
+      - name: Upload renamed APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: Monekin-zh.apk
+          path: release/Monekin-zh.apk
