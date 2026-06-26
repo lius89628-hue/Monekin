@@ -11,6 +11,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout code
@@ -43,6 +45,12 @@ jobs:
         run: |
           mkdir -p release
           cp build/app/outputs/flutter-apk/app-release.apk release/Monekin-zh.apk
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Monekin-zh-apk
+          path: release/Monekin-zh.apk
 
       - name: Upload APK to GitHub Release
         uses: softprops/action-gh-release@v2
