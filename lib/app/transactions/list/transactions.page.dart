@@ -104,7 +104,7 @@ class TransactionsPageState extends State<TransactionsPage> {
       },
       child: PageFramework(
         title: t.transaction.display(n: 10),
-        appBarBuilder: (_, _, _) => selectedTransactions.isNotEmpty
+        appBarBuilder: (_1, _2, _3) => selectedTransactions.isNotEmpty
             ? selectedTransactionsAppbar()
             : transactionsPageDefaultAppBar(t, context),
         floatingActionButton: ifIsInTabs(context)
